@@ -9,20 +9,7 @@ Dette repository dokumenterer min rejse med at lære Rust: mål, fremgang, resso
 ## Læringsmål
 - Skriv sikre og effektive programmer med idiomatisk Rust.
 - Lave Api'er
-
-## Kom godt i gang
-1. Installer Rust:
-    `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
-2. Opret nyt projekt:
-    cargo new mit_projekt
-3. Byg og kør:
-    cd mit_projekt
-    cargo run
-
-## Projekter / Øvelser
-- "hello-rust" — introduktion til cargo og modulet layout.
-- "todo-cli" — simpel CLI-app til at øve filhåndtering og error handling.
-- "http-client" — brug af reqwest til at hente data fra API'er.
+- Discordbot 
 
 ## Ressourcer
 - The Rust Programming Language (book) — https://doc.rust-lang.org/book/
