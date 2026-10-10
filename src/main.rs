@@ -1,35 +1,40 @@
-//https://doc.rust-lang.org/book/ch02-00-guessing-game-tutorial.html
+use std::print;
 
-use rand::Rng;
-use std::cmp::Ordering;
-use std::io;
 
-fn main() {
-    println!("Guess the number!");
-    let secret_number: u32 = rand::thread_rng().gen_range(1..=100);
-    loop {
-        println!("Please input your guess.");
 
-        let mut guess: String = String::new();
 
-        io::stdin()
-            .read_line(&mut guess)
-            .expect("Failed to read line");
 
-        let guess: u32 = match guess.trim().parse() {
-            Ok(num) => num,
-            Err(_) => continue,
-        };
+struct Car {
+    model: String,
+    year: u32,
+    speed: u32,
+}
 
-        match guess.cmp(&secret_number) {
-            Ordering::Less => println!("Too smalll"),
-            Ordering::Greater => println!("Too big"),
-            Ordering::Equal => {
-                println!("You win!");
-                break;
-            }
+impl Car {
+    fn new(model: &str, year: u32, speed: u32) -> Self {
+        Car { 
+            model: model.to_string(), 
+            year: year,
+            speed: speed
         }
-
-        println!("You guessed: {guess}");
     }
+
+    fn display_info(&self) {
+        println!("Car model: {}, Year: {}, Speed: {}", self.model, self.year, self.speed);
+    }
+
+    fn accelerate(&mut self, increment: u32) {
+        self.speed += increment;
+    }
+
+}
+
+fn main () {
+
+    let mut my_car: Car = Car::new("Kia", 2016, 0);
+
+    my_car.accelerate(50);
+
+    my_car.display_info(); 
+
 }
